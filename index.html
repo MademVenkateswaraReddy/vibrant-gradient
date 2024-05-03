@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibrant Gradient</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            background-image: radial-gradient(at 50% 50%, skyblue 30%, blue 100%), linear-gradient(to bottom, skyblue, blue);
+            background-size: cover;
+        }
+
+        .planet::before {
+            content: '';
+            display: block;
+            position: fixed;
+            width: 500px;
+            border-radius: 50%;
+            aspect-ratio: 1;
+            left: 80%;
+            top: 50%;
+            z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+            background-image: radial-gradient(at 50% 50%, skyblue, blue 80%), linear-gradient(to bottom, skyblue, blue);
+        }
+        @media only screen and (max-width: 1300px) {
+            .planet::before {
+                width: 70%;
+                height: 70vw;
+                left: 62%;
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            .planet::before {
+                width: 80%;
+                height: 80vw;
+                left: 60%;
+            }
+        }
+
+        @media only screen and (max-width: 320px) {
+            .planet::before {
+                width: 90%;
+                height: 90vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="planet"></div>
+</body>
+</html>
